@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+streamlit = "*"
+python-arango = "*"
+
+[dev-packages]
+pytest = "*"
+
+[requires]
+python_version = "3.11"
+
+[scripts]
+local_arango = "docker run --rm -e ARANGO_RANDOM_ROOT_PASSWORD=1 -v $PWD/arangodb_data:/var/lib/arangodb3 -p 8529:8529 --name arangodb-instance arangodb"
